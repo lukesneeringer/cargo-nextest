@@ -19,6 +19,6 @@ jobs:
           echo ${{ secrets.GITHUB_TOKEN }} | \
           docker login ghcr.io --username ${{ github.actor }} --password-stdin
       - name: Build the Docker image.
-        run: docker build --tag ghcr.io/lukesneeringer/cargo-llvm-cov:latest .
+        run: docker build --tag ghcr.io/${{ github.repository }}:latest .
       - name: Publish the Docker image.
         run: docker push ghcr.io/${{ github.repository }}:latest
