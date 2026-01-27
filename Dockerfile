@@ -6,5 +6,5 @@ RUN apt update && \
   apt clean
 
 # Install nextest.
-RUN cargo install cargo-nextest && \
+RUN cargo install --locked cargo-nextest && \
   rm -rf ~/.cargo/registry
